@@ -7,21 +7,26 @@ import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
 
-public class GetCategoriesApi extends BaseApi {
+public class GetCollectionApi extends BaseApi {
 
-	private static final String categoriesUrl = baseUrl + "categories";
+	private static String collectionUrl = baseUrl + "collections";
 
-	public HttpResponse<String> getAllCategories() {
+	public HttpResponse<String> getCollectionByCity(int cityId) {
 
 		Map<String, String> headerMap = GetDefaultHeader.getHeaders();
 
+		if (cityId > 0) {
+			collectionUrl = collectionUrl + "?city_id=" + cityId;
+		}
+
 		try {
-			return Unirest.get(categoriesUrl).headers(headerMap).asString();
+			return Unirest.get(collectionUrl).headers(headerMap).asString();
 
 		} catch (UnirestException e) {
-			e.printStackTrace();
 
+			e.printStackTrace();
 		}
 		return null;
 	}
+
 }
