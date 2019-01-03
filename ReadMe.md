@@ -1,6 +1,6 @@
-Requires Java and Maven.
+<B>Requires Java and Maven.</B><br>
 Performing API validation using Unirest library.
 
-Reference Links:
-http://unirest.io/java.html
-https://www.baeldung.com/unirest
+<h3>Reference Links:</h3>
+* http://unirest.io/java.html
+* https://www.baeldung.com/unirest
